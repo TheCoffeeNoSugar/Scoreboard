@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">@android:color/transparent</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue">#71B3FD</color>
+    <color name="grey">#EBEBEB</color>
+
+    <color name="activity_background">#F6F6F6</color>
+    <color name="main_title_color">#555555</color>
+    <color name="main_text_color">#6C6C6C</color>
+    <color name="hint_color">#B5B5B5</color>
+
+    <!-- 按钮不同状态的背景色 -->
+    <color name="btn_normal">#71B3FD</color>
+    <color name="btn_pressed">#489cfa</color>
+    <color name="btn_unable">#BFBFBF</color>
+</resources>

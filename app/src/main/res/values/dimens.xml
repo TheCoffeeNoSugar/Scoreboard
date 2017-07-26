@@ -1,0 +1,37 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="item_height">44dp</dimen>
+    <dimen name="page_padding_top">10dp</dimen>
+    <dimen name="padding_left_and_right">10dp</dimen>
+    <dimen name="margin_left_and_right">10dp</dimen>
+
+    <!-- 字体大小 -->
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+
+    <!-- padding -->
+    <dimen name="padding_5">5dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_12">12dp</dimen>
+
+    <!-- margin -->
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+    <dimen name="margin_80">80dp</dimen>
+
+    <!-- view大小 -->
+    <dimen name="view_size_1">1dp</dimen>
+    <dimen name="view_size_2">2dp</dimen>
+    <dimen name="view_size_5">5dp</dimen>
+    <dimen name="view_size_50">50dp</dimen>
+    <dimen name="view_size_80">80dp</dimen>
+    <dimen name="view_size_100">100dp</dimen>
+    <dimen name="view_size_120">120dp</dimen>
+</resources>

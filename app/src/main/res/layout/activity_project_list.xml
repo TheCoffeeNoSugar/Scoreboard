@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:padding="@dimen/padding_10">
+
+        <TextView
+            android:id="@+id/tv_activity_main_project_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_title_color"
+            android:textSize="@dimen/text_size_18"/>
+
+        <TextView
+            android:id="@+id/tv_activity_main_project_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/pb_activity_main_project_progress"
+            android:paddingRight="@dimen/margin_10"
+            android:textColor="@color/main_title_color"
+            android:textSize="@dimen/text_size_18"/>
+
+        <ProgressBar
+            android:layout_centerVertical="true"
+            android:id="@+id/pb_activity_main_project_progress"
+            style="@style/android:Widget.ProgressBar.Horizontal"
+            android:layout_width="@dimen/view_size_50"
+            android:layout_height="@dimen/view_size_2"
+            android:layout_alignParentRight="true"
+            android:max="100"
+            android:progress="40"/>
+
+</RelativeLayout>
