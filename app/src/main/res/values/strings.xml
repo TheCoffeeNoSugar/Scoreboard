@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name">Scoreboard</string>
 
+    <string name="common_confirm">确定</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_dialog_alert_title">温馨提示</string>
+    <string name="common_dialog_alert_delete">确定删除该选项吗？</string>
+
     <string name="main_add_project">添加项目</string>
-    <string name="main_increase_one">+1分</string>
-    <string name="main_increase_three">+3分</string>
-    <string name="main_increase_five">+5分</string>
-    <string name="main_increase_seven">+7分</string>
-    <string name="main_increase_ten">+10分</string>
-    <string name="main_decrease_ten">-10分</string>
     <string name="add_project_name">项目名称：</string>
     <string name="add_project_name_hint">请输入项目名称</string>
     <string name="add_target_total_score">目标总分：</string>
@@ -15,4 +14,15 @@
     <string name="add_target_month_score">月目标分：</string>
     <string name="add_target_month_score_hint">请输入每月的目标分数</string>
     <string name="add_project_submit">提交</string>
+    <string name="add_project_add_success">添加成功</string>
+    <string name="detail_increase_one">不认真  +1分</string>
+    <string name="detail_increase_three">一般  +3分</string>
+    <string name="detail_increase_five">超额  +5分</string>
+    <string name="detail_increase_seven">认真  +7分</string>
+    <string name="detail_decrease_ten">荒废  -10分</string>
+    <string name="detail_record">历史记录</string>
+    <string name="detail_more">更多</string>
+    <string name="detail_target_month">21天目标</string>
+    <string name="detail_target_total">最终目标</string>
+
 </resources>

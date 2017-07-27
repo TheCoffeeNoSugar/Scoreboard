@@ -5,14 +5,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.chenhaijun.scoreboard.R;
 import com.chenhaijun.scoreboard.adapter.ProjectListAdapter;
 import com.chenhaijun.scoreboard.base.BaseActivity;
 import com.chenhaijun.scoreboard.bean.ProjectListBean;
 import com.chenhaijun.scoreboard.constant.Constant;
-import com.chenhaijun.scoreboard.listener.onMyClickListener;
+import com.chenhaijun.scoreboard.listener.OnMyClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +29,7 @@ public class MainActivity extends BaseActivity{
 
         mTv_add = (TextView) findViewById(R.id.tv_activity_main_add);
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_activity_main_list);
+        mProjectListAdapter = new ProjectListAdapter();
     }
 
     @Override
@@ -37,10 +37,17 @@ public class MainActivity extends BaseActivity{
         mTv_add.setOnClickListener(this);//添加项目
 
         if (mProjectListAdapter != null) {
-            mProjectListAdapter.setOnMyClickListener(new onMyClickListener() {
+            mProjectListAdapter.setOnMyClickListener(new OnMyClickListener() {
                 @Override
-                public void onMyClick(int position) {
-                    Toast.makeText(MainActivity.this, position + "", Toast.LENGTH_SHORT).show();
+                public void onMyClick(int position, ProjectListBean projectListBean) {
+                    Intent mIntent = new Intent(mActivity, ProjectDetail.class);
+                    mIntent.putExtra(Constant.INTENT_DATA.PROJECT_INFO, projectListBean);
+                    startActivity(mIntent);
+                }
+
+                @Override
+                public void onMyLongClick(int position) {
+                    mProjectListAdapter.deleteItem(position);
                 }
             });
         }
@@ -48,7 +55,6 @@ public class MainActivity extends BaseActivity{
 
     @Override
     public void initData() {
-        mProjectListAdapter = new ProjectListAdapter();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         mRecyclerView.setAdapter(mProjectListAdapter);
     }

@@ -5,6 +5,8 @@
               android:background="@color/activity_background"
               android:orientation="vertical"
               android:paddingTop="@dimen/page_padding_top">
+    <View
+        style="@style/divider_horizontal"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,6 +36,9 @@
             android:textSize="@dimen/text_size_14"/>
     </RelativeLayout>
 
+    <View
+        style="@style/divider_horizontal"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_height"
@@ -62,6 +67,9 @@
             android:textSize="@dimen/text_size_14"/>
     </RelativeLayout>
 
+    <View
+        style="@style/divider_horizontal"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_height"
@@ -89,6 +97,9 @@
             android:textColorHint="@color/hint_color"
             android:textSize="@dimen/text_size_14"/>
     </RelativeLayout>
+
+    <View
+        style="@style/divider_horizontal"/>
 
     <TextView
         android:id="@+id/tv_activity_main_add_submit"

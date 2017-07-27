@@ -1,5 +1,6 @@
 package com.chenhaijun.scoreboard.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +9,10 @@ import android.widget.TextView;
 
 import com.chenhaijun.scoreboard.R;
 import com.chenhaijun.scoreboard.bean.ProjectListBean;
-import com.chenhaijun.scoreboard.listener.onMyClickListener;
+import com.chenhaijun.scoreboard.listener.OnMyClickListener;
+import com.chenhaijun.scoreboard.utils.DialogManager;
+import com.chenhaijun.scoreboard.utils.dialog.OptionAlertDialog;
+import com.chenhaijun.scoreboard.utils.dialog.listener.OnClickConfirmListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +23,14 @@ import java.util.List;
 
 public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.MyViewHolder> {
 
-    private List<ProjectListBean> mData = new ArrayList<>();
-    private onMyClickListener mOnMyClickListener;
+    private Context                 mContext;
+    private List<ProjectListBean>   mData = new ArrayList<>();
+    private OnMyClickListener       mOnMyClickListener;
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MyViewHolder(View.inflate(parent.getContext(), R.layout.activity_project_list, null));
+        mContext = parent.getContext();
+        return new MyViewHolder(View.inflate(mContext, R.layout.activity_project_list, null));
     }
 
     @Override
@@ -37,7 +43,28 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
             holder.mRootView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mOnMyClickListener.onMyClick(position);
+                    if (mOnMyClickListener != null) {
+                        mOnMyClickListener.onMyClick(position, mData.get(position));
+                    }
+                }
+            });
+            holder.mRootView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    if (mOnMyClickListener != null) {
+                        OptionAlertDialog optionAlertDialog = DialogManager.createOptionAlertDialog(mContext,
+                                mContext.getString(R.string.common_dialog_alert_title),
+                                mContext.getString(R.string.common_dialog_alert_delete));
+
+                        optionAlertDialog.show();
+                        optionAlertDialog.setOnClickConfirmListener(new OnClickConfirmListener() {
+                            @Override
+                            public void onClickConfirm() {
+                                mOnMyClickListener.onMyLongClick(position);
+                            }
+                        });
+                    }
+                    return true;
                 }
             });
         }
@@ -59,7 +86,14 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
         notifyDataSetChanged();
     }
 
-    public void setOnMyClickListener(onMyClickListener onMyClickListener) {
+    public void deleteItem(int position) {
+        if (mData != null) {
+            mData.remove(position);
+            notifyItemChanged(position);
+        }
+    }
+
+    public void setOnMyClickListener(OnMyClickListener onMyClickListener) {
         mOnMyClickListener = onMyClickListener;
     }
 

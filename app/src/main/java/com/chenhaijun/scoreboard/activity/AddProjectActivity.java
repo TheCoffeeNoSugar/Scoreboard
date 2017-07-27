@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chenhaijun.scoreboard.R;
 import com.chenhaijun.scoreboard.base.BaseActivity;
@@ -60,6 +61,7 @@ public class AddProjectActivity extends BaseActivity {
                 mIntent.putExtra(Constant.INTENT_DATA.PROJECT_INFO, mProjectListBean);
                 setResult(RESULT_OK, mIntent);
                 finish();
+                Toast.makeText(mActivity, getString(R.string.add_project_add_success), Toast.LENGTH_SHORT).show();
                 break;
         }
     }

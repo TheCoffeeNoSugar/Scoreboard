@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="@color/white"
-              android:padding="@dimen/padding_10">
+              android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@color/white"
+        android:padding="@dimen/padding_10">
 
         <TextView
             android:id="@+id/tv_activity_main_project_name"
@@ -22,13 +27,15 @@
             android:textSize="@dimen/text_size_18"/>
 
         <ProgressBar
-            android:layout_centerVertical="true"
             android:id="@+id/pb_activity_main_project_progress"
             style="@style/android:Widget.ProgressBar.Horizontal"
             android:layout_width="@dimen/view_size_50"
             android:layout_height="@dimen/view_size_2"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:max="100"
             android:progress="40"/>
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
